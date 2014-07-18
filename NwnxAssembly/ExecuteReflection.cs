@@ -30,7 +30,8 @@ namespace NwnxAssembly
                 {
                     ThePath = sAssembly;
                 }
-                a = Assembly.LoadFile(ThePath);
+                a = Assembly.LoadFrom(ThePath);
+                
                 var type = a.GetType(sNameSpace + "." + sClass);
                 MethodInfo mi = type.GetMethod(sMethod,
                   BindingFlags.Static | BindingFlags.Public | BindingFlags.FlattenHierarchy);
